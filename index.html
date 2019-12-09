@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Editorialistyx - UI Assignment</title>
+    <link rel="stylesheet" href="assets/css/style.css?version=v1" />
+    <link rel="icon" href="/assets/img/search.svg" type="image/svg" sizes="16x16">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="page-header text-right">
+            <div class="wrapper">
+                <form>
+                    <div class="input-group">
+                        <input class="form-control icon-search" id="searchProduct" 
+                            placeholder="Type product name" autocomplete="off"/>
+                    </div>
+                </form>
+            </div>
+        </header>
+        <div class="wrapper">
+            <div class="filter-box">
+                <ul class="filter-list">
+                    <li>
+                        <label>
+                            <input type="radio" name="sorting" value="2" />
+                            <span>Popular</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="sorting" value="3" />
+                            <span>Low Price</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="sorting" value="4" />
+                            <span>High Price</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="sorting" value="5" />
+                            <span>New</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="product-list-box" id="productList">
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/searchScript.js"></script>
+</body>
+</html>

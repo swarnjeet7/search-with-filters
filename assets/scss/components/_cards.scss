@@ -1,0 +1,84 @@
+.product-list-box {
+    @extend .d-flex;
+    flex-wrap: wrap;
+}
+.card {
+    width: 100%;
+    border: 1px solid lightgray;
+    padding: 10px;
+    font-size: 14px;
+    margin: 0 10px 15px;
+
+    @media screen and (min-width: 768px) {
+        max-width: 246px;
+    }
+    
+    .card__header {
+        @extend .text-center;
+        font-weight: 700;
+    }
+
+    .card__title {
+        max-height: 34px;
+        color: #212121;
+        margin: 0 0 10px;
+    }
+
+    .card__image {
+        background: lightcoral;
+        height: 140px;
+        overflow: hidden;
+        margin: 0 0 10px;
+    }
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    .card__ratings {
+        padding-bottom: 15px;
+        border-bottom: 1px solid lightgray;
+    }
+    .card__price-box {
+        padding: 10px;
+        border-bottom: 1px solid lightgray;
+
+        div + div {
+            padding-top: 5px;
+            color: #999;
+        }
+    }
+    .flex100px {
+        position: relative;
+    }
+    .card__desc-list {
+        padding-left: 20px;
+        line-height: 1.3;
+        color: #999;
+
+        li {
+            margin-bottom: 5px;
+        }
+    }
+    .ratings {
+        height: 20px;
+        background-image: url(../img/star-empty.png);
+        background-repeat: no-repeat;
+        background-size: 100px;
+    }
+    .ratings-fill {
+        height: 20px;
+        background-image: url(../img/star-fill.png);
+        background-repeat: no-repeat;
+        background-size: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .flex1 {
+        padding-left: 10px;
+    }
+}

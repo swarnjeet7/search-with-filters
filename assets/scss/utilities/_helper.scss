@@ -1,0 +1,23 @@
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.wrapper {
+    max-width: 80%;
+    margin: auto;
+}
+.page-header {
+    padding: 20px;
+    border-bottom: 1px solid lightgray;
+}
+.d-flex {
+    display: flex;
+}
+.flex1 {
+    flex: 1;
+}
+.flex100px {
+    flex: 0 0 100px;
+}
