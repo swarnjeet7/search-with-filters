@@ -15,12 +15,6 @@ const searchFilter = (function() {
             eventBindings();
         })
     }
-    const filterDataByName = (data, query) => {
-        data.filter(product => {
-            const productName = product.ratings.toLowerCase();
-            return productName.includes(query);
-        });
-    }
     
     const sortData = (data, type) => {
         data.sort((a, b) => {
@@ -40,7 +34,10 @@ const searchFilter = (function() {
         return data;
     }
     const searchProducts = (query) => {
-        filteredData = filterDataByName(productData, query);
+        filteredData = productData.filter(product => {
+            const productName = product.product_name.toLowerCase();
+            return productName.includes(query);
+        });
         printData(filteredData);
     }
     const applyFilter = (type) => {
