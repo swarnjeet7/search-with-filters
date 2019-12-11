@@ -5,6 +5,7 @@
   "main": "src/js/app.js",
   "scripts": {
     "start": "webpack src/js/app.js -o dist/js/app.js --mode development --watch",
+    "build": "webpack src/js/app.js -o dist/js/app.js --mode production",
     "test": "jest --watch"
   },
   "repository": {
