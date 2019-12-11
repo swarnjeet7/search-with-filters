@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const { FILTER_MAP } = __webpack_require__(/*! ./constant */ \"./src/js/constant.js\");\r\nconst { fetchData } = __webpack_require__(/*! ./http */ \"./src/js/http.js\");\r\nconst { printCards } = __webpack_require__(/*! ./util */ \"./src/js/util.js\");\r\n\r\nconst searchInit = () => {\r\n    let url = \"https://raw.githubusercontent.com/swarnjeet7/search-with-filters/master/data.json\";\r\n\r\n    fetchData(url).then(data => {\r\n        if(Array.isArray(data) && data.length) {\r\n            printCards(data);\r\n        } else {\r\n            console.error(\"Something Went Wrong\");\r\n        }\r\n    });\r\n}\r\n\r\nwindow.addEventListener('DOMContentLoaded', () => {\r\n    searchInit()\r\n});\n\n//# sourceURL=webpack:///./src/js/app.js?");
+eval("const { FILTER_MAP } = __webpack_require__(/*! ./constant */ \"./src/js/constant.js\");\r\nconst { fetchData } = __webpack_require__(/*! ./http */ \"./src/js/http.js\");\r\nconst { printCards } = __webpack_require__(/*! ./util */ \"./src/js/util.js\");\r\n\r\nconst searchInit = () => {\r\n    let url = \"https://raw.githubusercontent.com/swarnjeet7/search-with-filters/master/data.json?version=11122019\";\r\n\r\n    fetchData(url).then(data => {\r\n        if(Array.isArray(data) && data.length) {\r\n            printCards(data);\r\n        } else {\r\n            console.error(\"Something Went Wrong\");\r\n        }\r\n    });\r\n}\r\n\r\nwindow.addEventListener('DOMContentLoaded', () => {\r\n    searchInit()\r\n});\n\n//# sourceURL=webpack:///./src/js/app.js?");
 
 /***/ }),
 
