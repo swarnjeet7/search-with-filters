@@ -6,7 +6,11 @@ const searchInit = () => {
     let url = "https://raw.githubusercontent.com/swarnjeet7/search-with-filters/master/data.json";
 
     fetchData(url).then(data => {
-        printCards(data);
+        if(Array.isArray(data) && data.length) {
+            printCards(data);
+        } else {
+            console.error("Something Went Wrong");
+        }
     });
 }
 

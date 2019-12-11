@@ -2,7 +2,7 @@
   {
     "id": 1,
     "product_name": "Pasta - Canelloni",
-    "start": 3.8,
+    "star": 3.8,
     "ratings" : 125,
     "price": "2045.04",
     "emi_price": "38.83",
@@ -11,7 +11,7 @@
   }, {
     "id": 2,
     "product_name": "Lamb Shoulder Boneless Nz",
-    "start": 1.1,
+    "star": 1.1,
     "ratings" : 250,
     "price": "4399.25",
     "emi_price": "404.00",
@@ -20,7 +20,7 @@
   }, {
     "id": 3,
     "product_name": "Sage Derby",
-    "start": 3.3,
+    "star": 3.3,
     "ratings" : 500,
     "price": "3959.53",
     "emi_price": "89.05",
@@ -29,7 +29,7 @@
   }, {
     "id": 4,
     "product_name": "Juice - Lagoon Mango",
-    "start": 3.1,
+    "star": 3.1,
     "ratings" : 1243,
     "price": "4690.14",
     "emi_price": "448.91",
@@ -38,7 +38,7 @@
   }, {
     "id": 5,
     "product_name": "Cookies - Fortune",
-    "start": 4.1,
+    "star": 4.1,
     "ratings" : 1025,
     "price": "3497.45",
     "emi_price": "132.08",
@@ -47,7 +47,7 @@
   }, {
     "id": 6,
     "product_name": "Pepper - Black, Crushed",
-    "start": 1.9,
+    "star": 1.9,
     "ratings" : 10,
     "price": "4770.22",
     "emi_price": "350.77",
@@ -56,7 +56,7 @@
   }, {
     "id": 7,
     "product_name": "Syrup - Monin, Irish Cream",
-    "start": 4.0,
+    "star": 4.0,
     "ratings" : 190,
     "price": "1265.45",
     "emi_price": "203.13",
@@ -65,7 +65,7 @@
   }, {
     "id": 8,
     "product_name": "Cheese - Brie Roitelet",
-    "start": 3.4,
+    "star": 3.4,
     "ratings" : 1901,
     "price": "4409.28",
     "emi_price": "105.26",
@@ -74,7 +74,7 @@
   }, {
     "id": 9,
     "product_name": "Cheese - Boursin, Garlic / Herbs",
-    "start": 1.7,
+    "star": 1.7,
     "ratings" : 100,
     "price": "4389.51",
     "emi_price": "417.18",
@@ -83,7 +83,7 @@
   }, {
     "id": 10,
     "product_name": "Contreau",
-    "start": 1.4,
+    "star": 1.4,
     "ratings" : 107,
     "price": "2754.32",
     "emi_price": "477.40",

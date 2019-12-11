@@ -4,7 +4,7 @@ const eventBindings = () => {
     const searchInput = document.getElementById('searchProduct');
     if(searchInput) {
         searchInput.addEventListener('keyup', event => {
-            const userInputVal = event.target.value.toLowerCase();
+            const userInputVal = event.target.value;
             printCards(filterData(dataJson, userInputVal))
         });
     }
@@ -21,6 +21,7 @@ const eventBindings = () => {
 }
 
 const printCards = (data) => {
+    if(!data) return false;
     if(dataJson === null) { dataJson = data; }
     const length = data.length;
     let cards = '';
@@ -68,7 +69,7 @@ const sortData = (data, type) => {
     if(type == FILTER_MAP.rel) return data;
     data.sort((a, b) => {
         if(type == FILTER_MAP.popular) {
-            return b.ratings - a.ratings;
+            return b.star - a.star;
         }
         if(type == FILTER_MAP.lowPrice) {
             return a.price - b.price;
@@ -78,6 +79,8 @@ const sortData = (data, type) => {
         }
         if(type == FILTER_MAP.new) {
             return new Date(b.date).getTime() - new Date(a.date).getTime();
+        } else {
+            return a - b;
         }
     });
     return data;
@@ -92,11 +95,14 @@ const applyFilter = (type) => {
     printCards(newData);
 }
 
-
 const filterData = (data, query) => {
     filteredData = data.filter(product => {
-        const productName = product.product_name.toLowerCase();
-        return productName.includes(query);
+        if(product.product_name) {
+            const productName = product.product_name.toLowerCase();
+            return productName.includes(query.toLowerCase());
+        } else {
+            return product;
+        }
     });
     return filteredData;
 }
