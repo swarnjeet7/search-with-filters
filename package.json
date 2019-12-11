@@ -1,0 +1,25 @@
+{
+  "name": "simple-search-with-es6",
+  "version": "1.0.0",
+  "description": "Search and Filters with help of Vanilla JS (ES6, ES2015)",
+  "main": "src/js/app.js",
+  "scripts": {
+    "start": "webpack src/js/app.js -o dist/js/app.js --mode development --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swarnjeet7/search-with-filters.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swarnjeet7/search-with-filters/issues"
+  },
+  "homepage": "https://github.com/swarnjeet7/search-with-filters#readme",
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}

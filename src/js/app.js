@@ -1,4 +1,4 @@
-const searchFilter = (function() {
+const searchFilter = (() => {
     let productData = null, filteredData = null;
     const filterMap = {
         1: 'relevance',
@@ -9,11 +9,13 @@ const searchFilter = (function() {
     }
 
     const getJsonData = () => {
-        $.getJSON( "assets/js/data.json", function( data ) {
-            // we can check status and response code to handle exceptions.
-            printData(data);
-            eventBindings();
-        })
+        let url = "https://raw.githubusercontent.com/swarnjeet7/search-with-filters/master/db.json";
+        fetch(url)
+            .then(response => response.json())
+            .then(res => {
+                printData(res);
+                eventBindings();
+            });
     }
     
     const sortData = (data, type) => {
@@ -55,13 +57,23 @@ const searchFilter = (function() {
         }
     }
     const eventBindings = () => {
-        document.getElementById('searchProduct').addEventListener('keyup', function(event) {
-            searchProducts(this.value.toLowerCase());
-        });
-        $('.filter-list input').on('change', function() {
-            const fType = $(this).val();
-            applyFilter(fType);     
-        });
+        const searchInput = document.getElementById('searchProduct');
+        if(searchInput) {
+            searchInput.addEventListener('keyup', event => {
+                searchProducts(this.value.toLowerCase());
+            });
+        }
+        
+        const radioInputs = document.querySelectorAll('.filter-list input');
+        if(radioInputs) {
+            radioInputs.forEach(input => {
+                input.addEventListener('change', () => {
+                    const type = this.value;
+                    applyFilter(type);
+                });
+            });
+        }
+        
     }
     const printData = (data) => {
         if(productData === null) {
@@ -114,6 +126,6 @@ const searchFilter = (function() {
     }
 })();
 
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', () => {
     searchFilter.getJsonData();
 });
