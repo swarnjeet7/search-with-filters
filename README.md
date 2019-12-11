@@ -1,2 +1,2 @@
 # search-with-filters
-Search and Filters with help of Vanilla JS and Jquery
+Search and Filters with help of Vanilla JS
