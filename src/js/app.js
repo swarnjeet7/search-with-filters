@@ -1,4 +1,3 @@
-const { FILTER_MAP } = require('./constant');
 const { fetchData } = require('./http');
 const { printCards } = require('./util');
 

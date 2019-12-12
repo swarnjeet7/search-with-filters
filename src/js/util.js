@@ -1,8 +1,10 @@
-let { dataJson, filteredData, FILTER_MAP } = require('./constant'); 
+let { FILTER_MAP } = require('./constant');
+let dataJson = null; // we store data in variable to save the request;
+let filteredData = null; // we store data after as per user input.
 
 const eventBindings = () => {
     const searchInput = document.getElementById('searchProduct');
-    if(searchInput) {
+    if(searchInput) { //checking if input have so bind the keyup event
         searchInput.addEventListener('keyup', event => {
             const userInputVal = event.target.value;
             printCards(filterData(dataJson, userInputVal))
@@ -10,7 +12,7 @@ const eventBindings = () => {
     }
     
     const radioInputs = document.querySelectorAll('.filter-list input');
-    if(radioInputs) {
+    if(radioInputs) { //checking if radiobtns we have so bind the change event
         radioInputs.forEach(input => {
             input.addEventListener('change', (event) => {
                 const type = event.target.value;
@@ -20,7 +22,7 @@ const eventBindings = () => {
     }
 }
 
-const printCards = (data) => {
+const printCards = (data) => { //this will print all the cards
     if(!data) return false;
     if(dataJson === null) { dataJson = data; }
     const length = data.length;
@@ -65,38 +67,38 @@ const printCards = (data) => {
     box.innerHTML = cards;
 }
 
-const sortData = (data, type) => {
+const sortData = (data, type) => { // this will return sorted data 
     if(type == FILTER_MAP.rel) return data;
     data.sort((a, b) => {
-        if(type == FILTER_MAP.popular) {
+        if(type == FILTER_MAP.popular) { //when popular radio btn checked 
             return b.star - a.star;
         }
-        if(type == FILTER_MAP.lowPrice) {
+        if (type == FILTER_MAP.lowPrice) { //when low Price radio btn checked 
             return a.price - b.price;
         }
-        if(type == FILTER_MAP.highPrice) {
+        if (type == FILTER_MAP.highPrice) {//when high Price radio btn checked
             return b.price - a.price;
         }
-        if(type == FILTER_MAP.new) {
+        if (type == FILTER_MAP.new) {//when new radio btn checked
             return new Date(b.date).getTime() - new Date(a.date).getTime();
-        } else {
+        } else { // catching if above condition is not met
             return a - b;
         }
     });
-    return data;
+    return data; //returning sorted data
 }
 
 const applyFilter = (type) => {
-    if(type == FILTER_MAP.rel) {
+    if(type == FILTER_MAP.rel) { // if Relevence is checked print all data
         printCards(dataJson);
         return;
     }
-    let newData = sortData(filteredData || dataJson, type);
+    let newData = sortData(filteredData || dataJson, type); // otherwise filtered data
     printCards(newData);
 }
 
 const filterData = (data, query) => {
-    filteredData = data.filter(product => {
+    filteredData = data.filter(product => { //this will filter which product have query text in product name
         if(product.product_name) {
             const productName = product.product_name.toLowerCase();
             return productName.includes(query.toLowerCase());
@@ -104,10 +106,10 @@ const filterData = (data, query) => {
             return product;
         }
     });
-    return filteredData;
+    return filteredData; //using this veriable to keep filter data after user input in search
 }
 
-eventBindings();
+eventBindings(); //binding dom events 
 
 exports.filterData = filterData;
 exports.printCards = printCards;
